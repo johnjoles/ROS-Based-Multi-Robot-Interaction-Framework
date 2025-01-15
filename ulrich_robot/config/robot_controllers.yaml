@@ -1,0 +1,18 @@
+# my_robot_controllers.yaml
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    # Controllers
+    diff_drive_controller:
+      type: "diff_drive_controller/DiffDriveController"
+      left_wheel: wheel1_joint wheel3_joint
+      right_wheel: wheel2_joint wheel4_joint
+      pose_covariance: [0.1, 0, 0, 0, 0, 0, 
+                        0, 0.1, 0, 0, 0, 0, 
+                        0, 0, 0.1, 0, 0, 0, 
+                        0, 0, 0, 0.1, 0, 0, 
+                        0, 0, 0, 0, 0.1, 0, 
+                        0, 0, 0, 0, 0, 0.1]
+      enable_odom_tf: true
+
