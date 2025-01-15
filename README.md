@@ -1,7 +1,7 @@
 # ROS-Based-Multi-Robot-Interaction-Framework
 
 
-This project focuses on creating a robust and efficient framework for interaction and coordination between a Mobile Robot and an Industrial Robot, leveraging the capabilities of the Robot Operating System (ROS). The framework enables synchronized task execution and improves operational efficiency in dynamic environments.
+This project focuses on creating a Robust and Efficient framework for interaction and coordination between a Mobile Robot and an Industrial Robot, leveraging the capabilities of the Robot Operating System (ROS). The framework enables synchronized task execution and improves operational efficiency in dynamic environments.
 
 ### Behaviour Tree (Mobile Robot):
 
@@ -16,7 +16,7 @@ This project focuses on creating a robust and efficient framework for interactio
 ## Key Contributions:
 ### Communication Framework Development:
 
-Designed and implemented a seamless communication mechanism between the mobile and industrial robots using ROS topics, services, and actions.
+Designed and implemented a seamless communication mechanism between the Mobile and Industrial Robots using ROS topics, services, and actions.
 Ensured real-time data exchange for task coordination, enhancing system responsiveness.
 
 ### Robot Integration:
@@ -28,7 +28,7 @@ Established bi-directional communication between robots to facilitate collaborat
 
 ### Simulation and Visualization:
 
-Utilized tools like Gazebo and Rviz to simulate and visualize the robots' interaction in a virtual environment.
+Utilized tools like Gazebo and Rviz to Simulate and Visualize the robots interaction in a virtual environment.
 Conducted virtual testing of robot behaviors to minimize errors during physical deployment.
 
 #### RViz Image :
