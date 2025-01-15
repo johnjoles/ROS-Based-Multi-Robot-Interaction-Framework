@@ -44,8 +44,8 @@ Conducted virtual testing of robot behaviors to minimize errors during physical 
 
 ### Motion and Path Planning:
 
-Developed Motion Planning algorithms for precise manipulation tasks performed by the Industrial Robot.
-Implemented Path Planning for the Mobile Robot to navigate complex environments using sensors such as LIDAR, Realsense Camera.
+Developed Motion Planning Algorithm for Precise Manipulation tasks performed by the Industrial Robot.
+Implemented Obstacle Avoidance for the Mobile Robot to Navigate complex environments using sensors such as LIDAR, Realsense Camera.
 
 #### Note:
-This framework demonstrates a comprehensive approach to multi-robot interaction, showcasing proficiency in ROS, robotics simulation, and autonomous navigation. It holds significant potential for industrial automation, logistics, and collaborative robotics.
+This framework demonstrates a comprehensive approach to Multi-Robot Interaction, showcasing proficiency in ROS, Robotics Simulation, and Autonomous Navigation. It holds significant potential for Industrial Automation, Logistics, and Collaborative Robotics.
