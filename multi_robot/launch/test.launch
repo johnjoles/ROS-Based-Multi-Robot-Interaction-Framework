@@ -1,0 +1,50 @@
+<launch>
+  <!-- Simulation Time -->
+  <param name="use_sim_time" value="true"/>
+
+  <!-- Arguments -->
+  <arg name="robot_model" default="$(find multi_robot)/urdf/combined_gazebo.urdf.xacro"/>
+  <arg name="enable_gui" default="true"/>
+  <arg name="rviz_config" default="$(find multi_robot)/rviz/rviz_world.rviz"/>
+  <arg name="world_file" default="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/>
+
+  <!-- Robot Description -->
+  <param name="robot_description" command="$(find xacro)/xacro $(arg robot_model)" />
+
+  <!-- Joint State Publisher -->
+  <node if="$(arg enable_gui)" name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node unless="$(arg enable_gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- Robot State Publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+
+  <!-- RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" required="true">
+    <param name="Fixed_frame" value="body_link" />
+  </node>
+
+  <!-- Gazebo Launch -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+  
+  <!-- Controller Parameters -->
+  <rosparam file="$(find multi_robot)/config/ur10_controllers.yaml"/>
+
+  <!-- Robot Spawn -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-param robot_description -urdf -model combined_robot -x -6 -y 3 -z 0" />
+
+  <!-- Controller Spawner -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" required="true" output="screen"
+        args="joint_state_controller ur10_arm_controller" />
+
+  <!-- Custom Motion Script -->
+  <node name="ur_motion" pkg="multi_robot" type="ur_motion.py" output="screen"/>
+
+  <!-- Future Implementation -->
+  <!-- Example node for another script -->
+  <!-- node name="laser_motion" pkg="multi_robot" type="laser_motion.py" output="screen"/ -->
+
+</launch>
+
