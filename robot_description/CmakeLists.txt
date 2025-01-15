@@ -1,0 +1,42 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(robot_description)
+
+# Set compiler options
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# Find catkin dependencies
+find_package(catkin REQUIRED COMPONENTS
+  # List ROS dependencies here, for example:
+  # roscpp
+  # std_msgs
+)
+
+# Uncomment and add other dependencies if needed
+# find_package(<dependency> REQUIRED)
+
+# Specify any include directories
+# include_directories(
+#   include
+#   ${catkin_INCLUDE_DIRS}
+# )
+
+# catkin specific configuration
+catkin_package()
+
+# Installation of files
+install(
+  DIRECTORY urdf launch rviz meshes
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+# Add executable or library if you have C++ nodes
+# add_executable(${PROJECT_NAME}_node src/${PROJECT_NAME}_node.cpp)
+# target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})
+
+# Optionally, tests could be added here if needed
+# if(CATKIN_ENABLE_TESTING)
+#   find_package(rostest REQUIRED)
+#   # Add test files
+# endif
