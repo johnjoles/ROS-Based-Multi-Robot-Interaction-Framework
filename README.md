@@ -29,6 +29,8 @@ Conducted virtual testing of robot behaviors to minimize errors during physical 
 
 ![image](https://github.com/user-attachments/assets/c9dcc06a-9f11-4974-a880-445e85edbb1a)
 
+![image](https://github.com/user-attachments/assets/a0298f99-1862-46a8-94f0-8753d3ce3281)
+
 
 ### Motion and Path Planning:
 
