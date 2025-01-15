@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="four_wheel_robot">
+    <!-- Your xacro content here -->
+
+    <!--rosrun tf static_transform_publisher 0 0 0 0 0 0 1 odom base_footprint 100 
+    <xacro:include filename="mobile_camera.xacro"/>
+    <xacro:include filename="top_camera.xacro"/>    -->
+
+    
+    <xacro:include filename="robot_description.xacro"/>
+    <xacro:include filename="four_diff_drive_gazebo.xacro"/>
+    <xacro:include filename="transmission.xacro"/>
+    <xacro:include filename="camera_feed.xacro"/>
+    <xacro:include filename="laser_scan.xacro"/>
+
+</robot>
