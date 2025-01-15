@@ -24,7 +24,7 @@ if __name__ == "__main__":
     bridge = CvBridge()
 
     # Subscribe to the camera topic (modify the topic name as per your setup)
-    camera_topic = "top/camera/image_raw"
+    camera_topic = "/top/rgb/image_raw"
     rospy.Subscriber(camera_topic, Image, image_callback)
 
     rospy.loginfo("Camera node started, waiting for images...")
