@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot name="base_description">
+  
+
+  <!-- Front Right Wheel Transmission -->
+  <transmission name="trans_FRWL">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FRWL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_FRWL">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- Front Left Wheel Transmission -->
+  <transmission name="trans_FLWL">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FLWL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_FLWL">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- Rear Right Wheel Transmission -->
+  <transmission name="trans_RRWL">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RRWL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RRWL">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- Rear Left Wheel Transmission -->
+  <transmission name="trans_RLWL">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RLWL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RLWL">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>
