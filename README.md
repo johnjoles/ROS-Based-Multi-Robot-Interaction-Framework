@@ -3,7 +3,7 @@
 
 This project focuses on creating a robust and efficient framework for interaction and coordination between a Mobile Robot and an Industrial Robot, leveraging the capabilities of the Robot Operating System (ROS). The framework enables synchronized task execution and improves operational efficiency in dynamic environments.
 
-Key Contributions:
+## Key Contributions:
 Communication Framework Development:
 
 Designed and implemented a seamless communication mechanism between the mobile and industrial robots using ROS topics, services, and actions.
