@@ -21,11 +21,11 @@ Established bi-directional communication between robots to facilitate collaborat
 Utilized tools like Gazebo and Rviz to simulate and visualize the robots' interaction in a virtual environment.
 Conducted virtual testing of robot behaviors to minimize errors during physical deployment.
 
-RViz Image :
+#### RViz Image :
 
 ![image](https://github.com/user-attachments/assets/9dd51b84-a455-4a75-beac-d05b7b2a8330)
 
-Gazebo Simulation:
+#### Gazebo Simulation:
 
 ![image](https://github.com/user-attachments/assets/c9dcc06a-9f11-4974-a880-445e85edbb1a)
 
