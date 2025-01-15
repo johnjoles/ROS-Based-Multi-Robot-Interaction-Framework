@@ -1,0 +1,12 @@
+skid_steer_controller:
+  type: "diff_drive_controller/DiffDriveController"
+  left_wheel: ['RLWL', 'FLWL']
+  right_wheel: ['RRWL', 'FRWL']
+  publish_rate: 50
+  velocity_rolling_window_size: 10
+  wheel_separation: 0.6
+  wheel_radius: 0.15
+  cmd_vel_timeout: 0.5
+  publish_cmd: true
+  enable_odom_tf: true
+  base_frame_id: "base_footprint"
