@@ -1,0 +1,58 @@
+<robot name="base_description">
+  
+    <!-- Define the laser link -->
+    <link name="laser_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.02"/>
+            </geometry>
+            <material name="red">
+                <color rgba="0.5 0.5 0.5 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.02"/>
+            </geometry>
+        </collision>
+        <origin xyz="0 0 0.0"/>
+    </link>
+
+    <!-- Define the fixed joint to attach laser to robot -->
+    <joint name="laser_joint" type="fixed">
+        <parent link="body_link"/>
+        <child link="laser_link"/>
+        <origin xyz="0.2 0 0.015"/>
+    </joint>
+
+    <!-- Define the Gazebo plugin for RPLIDAR -->
+    <gazebo reference="laser_link">
+        <material>Gazebo/Red</material>
+        <sensor type="ray" name="laser">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>20</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>720</samples> 
+                        <resolution>1</resolution>
+                        <min_angle>-1.483</min_angle>  <!--default value is 1.4-->
+                        <max_angle>1.483</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.10</min> <!-- RPLIDAR min range -->
+                    <max>10.0</max> <!-- RPLIDAR max range -->
+                    <resolution>0.01</resolution>
+                </range>
+            </ray>
+            <plugin name="laser_ros" filename="libgazebo_ros_laser.so">
+                <topicName>/scan</topicName>
+                <frameName>laser_link</frameName>
+                <update_rate>20</update_rate> 
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>

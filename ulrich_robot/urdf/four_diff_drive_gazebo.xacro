@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo reference="base_footprint">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+    </gazebo>
+
+    <gazebo reference="body_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Wheels -->
+    <gazebo reference="FRWL">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>
+            <color rgba="0.0 0.0 0.0 1.0"/>
+        </material>
+    </gazebo>
+    <gazebo reference="FLWL">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="RRWL">
+        <mu1>1.0</mu1>
+
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="RLWL">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- Gazebo plugin for differential drive -->
+    <gazebo>
+
+        <plugin name="skid_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+
+                <robotBaseFrame>base_footprint</robotBaseFrame>
+                <broadcastTF>true</broadcastTF>
+
+                <!-- Update rate in Hz -->
+                <updateRate>500</updateRate>
+        
+                <!-- Front Wheels -->
+                <leftFrontJoint>FLWL</leftFrontJoint>
+                <leftRearJoint>RLWL</leftRearJoint>
+                <rightFrontJoint>FRWL</rightFrontJoint>
+                <rightRearJoint>RRWL</rightRearJoint>
+
+
+                <!-- kinematics -->
+                <wheelSeparation>0.6</wheelSeparation>
+                <wheelDiameter>0.3</wheelDiameter>
+                <torque>1000.0</torque>
+
+        
+                <!-- input -->
+                <commandTopic>cmd_vel</commandTopic>
+        
+                <!-- output -->
+                <odometryFrame>odom</odometryFrame>
+                <odometryTopic>odom</odometryTopic>
+                <odometrySource>1</odometrySource>
+
+                <publish_odom>true</publish_odom>
+                <publish_odom_tf>true</publish_odom_tf>
+                <publishWheelTF>true</publishWheelTF>
+                <publishWheelJointState>true</publishWheelJointState>                
+
+                <covariance_x>0.000500</covariance_x>
+                <covariance_y>0.000500</covariance_y>
+                <covariance_yaw>0.010000</covariance_yaw>
+      
+        </plugin>
+
+    </gazebo>
+
+</robot>
+

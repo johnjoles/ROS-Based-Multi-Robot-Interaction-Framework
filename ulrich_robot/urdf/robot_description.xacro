@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="base_description">
+  
+  <link name="base_footprint"/>
+  <joint name="base_to_footprint" type="fixed">
+      <parent link="base_footprint"/>
+      <child link="body_link"/>
+      <origin xyz="0 0 0.300" rpy="0 0 0"/>
+    </joint>
+  
+  <link
+    name="body_link">
+    <inertial>
+      <origin
+        xyz="-0.0006348 -6.2841E-06 -0.10053"
+        rpy="0 0 0" />
+      <mass
+        value="46.805" />
+      <inertia
+        ixx="0.63839"
+        ixy="5.6449E-19"
+        ixz="-1.7289E-05"
+        iyy="1.773"
+        iyz="-6.7084E-18"
+        izz="2.1118" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/visual/base_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color rgba="0.0 0.0 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/collision/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link
+    name="front_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 1.3878E-17 0.051652"
+        rpy="0 0 0" />
+      <mass
+        value="7.1319" />
+      <inertia
+        ixx="0.045456"
+        ixy="1.2429E-10"
+        ixz="-1.8098E-18"
+        iyy="0.045495"
+        iyz="-4.9282E-12"
+        izz="0.077719" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/visual/front_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/collision/front_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRWL"
+    type="continuous">
+    <origin
+      xyz="0.18996 -0.3225 -0.146"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="front_right_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="12"
+      velocity="7" />
+    <dynamics
+      damping="0.25"
+      friction="0.8" />
+  </joint>
+  
+  <link
+    name="fron_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 1.3878E-17 -0.051652"
+        rpy="0 0 0" />
+      <mass
+        value="7.1319" />
+      <inertia
+        ixx="0.045456"
+        ixy="-1.2429E-10"
+        ixz="-1.5576E-18"
+        iyy="0.045495"
+        iyz="4.9282E-12"
+        izz="0.077719" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/visual/fron_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/collision/fron_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLWL"
+    type="continuous">
+    <origin
+      xyz="0.18996 0.3225 -0.146"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="fron_left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="12"
+      velocity="7" />
+    <dynamics
+      damping="0.25"
+      friction="0.8" />
+  </joint>
+  <link
+    name="rear_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 1.3878E-17 0.051652"
+        rpy="0 0 0" />
+      <mass
+        value="7.1319" />
+      <inertia
+        ixx="0.045456"
+        ixy="1.2429E-10"
+        ixz="-1.6989E-18"
+        iyy="0.045495"
+        iyz="-4.9282E-12"
+        izz="0.077719" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/visual/rear_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/collision/rear_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRWL"
+    type="continuous">
+    <origin
+      xyz="-0.19004 -0.3225 -0.146"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="rear_right_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="12"
+      velocity="7" />
+    <dynamics
+      damping="0.25"
+      friction="0.8" />
+  </joint>
+  <link
+    name="rear_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 1.3878E-17 -0.051652"
+        rpy="0 0 0" />
+      <mass
+        value="7.1319" />
+      <inertia
+        ixx="0.045456"
+        ixy="-1.2429E-10"
+        ixz="-1.8391E-18"
+        iyy="0.045495"
+        iyz="4.9282E-12"
+        izz="0.077719" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/visual/rear_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/collision/rear_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RLWL"
+    type="continuous">
+    <origin
+      xyz="-0.19004 0.3225 -0.146"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="rear_left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="12"
+      velocity="7" />
+    <dynamics
+      damping="0.25"
+      friction="0.8" />
+  </joint>
+
+</robot>
