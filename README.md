@@ -25,13 +25,6 @@ Developed Motion Planning algorithms for precise manipulation tasks performed by
 Implemented Path Planning for the Mobile Robot to navigate complex environments using sensors such as LIDAR, ultrasonic, and IMUs.
 Leveraged ROS packages like MoveIt! for motion control and Navigation Stack for autonomous navigation.
 
-### Tools & Technologies:
 
-ROS (Robot Operating System): Used as the core middleware for robot communication and control.
-Gazebo: Simulated the robots' physical environment and behavior to test functionalities.
-Rviz: Visualized robot states, sensor data, and task execution in real time.
-Sensors: Integrated various sensors to enhance robot perception and decision-making.
-MoveIt!: Facilitated motion planning for robotic arms.
-Navigation Stack: Enabled path planning and obstacle avoidance for the mobile robot.
-
+#### Note:
 This framework demonstrates a comprehensive approach to multi-robot interaction, showcasing proficiency in ROS, robotics simulation, and autonomous navigation. It holds significant potential for industrial automation, logistics, and collaborative robotics.
