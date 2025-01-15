@@ -14,6 +14,8 @@ Ensured real-time data exchange for task coordination, enhancing system responsi
 Successfully mounted and integrated the Industrial Robot on the Mobile Robot using ROS nodes.
 Established bi-directional communication between robots to facilitate collaborative operations.
 
+![image](https://github.com/user-attachments/assets/a85f03ef-8eee-4877-9f6d-dbfb27e68d86)
+
 ### Simulation and Visualization:
 
 Utilized tools like Gazebo and Rviz to simulate and visualize the robots' interaction in a virtual environment.
