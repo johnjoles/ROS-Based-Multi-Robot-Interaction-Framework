@@ -22,7 +22,7 @@ Conducted virtual testing of robot behaviors to minimize errors during physical 
 ### Motion and Path Planning:
 
 Developed Motion Planning algorithms for precise manipulation tasks performed by the Industrial Robot.
-Implemented Path Planning for the Mobile Robot to navigate complex environments using sensors such as LIDAR, ultrasonic, and IMUs.
+Implemented Path Planning for the Mobile Robot to navigate complex environments using sensors such as LIDAR, Realsense Camera.
 Leveraged ROS packages like MoveIt! for motion control and Navigation Stack for autonomous navigation.
 
 
