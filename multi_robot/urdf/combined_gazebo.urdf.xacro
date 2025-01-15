@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="combined_robot">
+
+  <xacro:include filename="$(find ur10_robot)/config/gazebo_ur10_robot.urdf"/>
+
+  <xacro:include filename="$(find ulrich_robot)/urdf/ulrich_robot/ulrich_robot.urdf.xacro"/>
+
+   <link name="ur_mount_link">
+
+  </link>
+
+  <joint name="ur_mount_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="ur_mount_link"/>
+  </joint>
+
+  <joint name="ur_to_pioneer_joint" type="fixed">
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <parent link="ur_mount_link"/>
+    <child link="base_link"/>
+  </joint>
+
+  
+</robot>
+
+

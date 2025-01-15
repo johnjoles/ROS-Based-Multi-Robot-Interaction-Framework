@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="combined_robot">
+
+  <xacro:include filename="$(find industrial_robot)/urdf/my_robot_ur5.xacro"/>
+
+
+  <!-- Load UR10 and position it 10 meters away -->
+  <xacro:include filename="$(find robot_description)/urdf/four_wheel_robot.urdf.xacro"/>
+
+   <link name="ur_mount_link">
+
+  </link>
+
+  <joint name="ur_mount_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <parent link="base_foot_link"/>
+    <child link="ur_mount_link"/>
+  </joint>
+
+  <joint name="ur_to_pioneer_joint" type="fixed">
+    <origin xyz="0 0 0.45" rpy="0 0 0"/>
+    <parent link="ur_mount_link"/>
+    <child link="base_link"/>
+  </joint>
+
+  
+</robot>
+
+
