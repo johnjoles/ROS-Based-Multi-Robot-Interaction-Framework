@@ -5,39 +5,12 @@ This project focuses on creating a robust and efficient framework for interactio
 
 ### Behaviour Tree (Mobile Robot):
 
-Root (Mobile Robot)
-├── Execution
-│   ├── Sequence (Avoid Obstacle)
-│   │   ├── Detect Obstacle (Sensor Input)  & Signal -> IR ( Sensor Fusion )
-│   │   ├── Stop
-│   │   ├── Turn Left/Right
-│   │   └── Resume Exploration
-│   ├── Sequence (Return to Base)
-│   │   ├── Check Battery
-│   │   ├── Navigate to Charging Station
-│   │   └── Recharge
-│   └── Sequence (Exploration)
-│       ├── Move Forward
-│       ├── Scan for Obstacles
-│       └── No Obstacle -> Continue Moving
+![Mobile_Robot_Flowchart](https://github.com/user-attachments/assets/a216eb42-4453-4e4f-beb1-cbee1c8640e8)
+
 
 ### Behaviour Tree (Industrial Robot):
 
-Root: Industrial Robot
-├── Execution
-│   ├── Sequence: Destination Reached (Signal Received from Mobile Robot)
-│   │   ├── Detect Obstacle (Camera Input)
-│   │   ├── Overcome the Obstacle and Execute the Task
-│   │   ├── Done Task -> Signal to Mobile Robot (Move) 
-│   │   └── Failed Task -> Signal to Mobile Robot (Change or Move Location)
-│   ├── Sequence: Obstacle Signal from Mobile Robot
-│   │   ├── Detect Obstacle (Camera Input)
-│   │   ├── Decision Making to Avoid Obstacle (Change the IR Position)
-│   │   └── Send Signal to Navigate the Mobile Robot
-│   └── Sequence: Exploration
-│       ├── No Obstacle
-│       ├── Execute the Task
-│       └── Done Task -> Signal to Mobile Robot
+
 
 ## Key Contributions:
 ### Communication Framework Development:
