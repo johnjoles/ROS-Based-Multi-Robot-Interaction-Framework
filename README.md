@@ -24,6 +24,9 @@ Conducted virtual testing of robot behaviors to minimize errors during physical 
 Developed Motion Planning algorithms for precise manipulation tasks performed by the Industrial Robot.
 Implemented Path Planning for the Mobile Robot to navigate complex environments using sensors such as LIDAR, Realsense Camera.
 
+RViz Image :
+
+![image](https://github.com/user-attachments/assets/9dd51b84-a455-4a75-beac-d05b7b2a8330)
 
 
 #### Note:
