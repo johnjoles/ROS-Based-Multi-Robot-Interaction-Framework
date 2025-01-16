@@ -63,11 +63,11 @@ class RobotMovement:
     def laser_callback(self, scan_data):
         """Callback for processing laser scan data."""
         regions = [
-            min(scan_data.ranges[0:143]),
-            min(scan_data.ranges[144:287]),
-            min(scan_data.ranges[288:431]),
-            min(scan_data.ranges[432:575]),
-            min(scan_data.ranges[576:713])
+            min(scan_data.ranges[0:144]),
+            min(scan_data.ranges[144:288]),
+            min(scan_data.ranges[288:432]),
+            min(scan_data.ranges[432:576]),
+            min(scan_data.ranges[576:720])
         ]
 
         self.right_side = regions[0]
@@ -152,6 +152,7 @@ class RobotMovement:
         elif front_side < self.min_safe_distance:
 
             if left_front_side > self.min_safe_distance and right_front_side > self.min_safe_distance:
+
                 if left_front_side > right_front_side and left_side > right_side:
                     self.turning(0.25)
                 elif right_front_side > left_front_side and right_side > left_side:
@@ -166,23 +167,31 @@ class RobotMovement:
                 self.turn(-0.25)
 
             elif left_front_side < self.min_safe_distance and right_front_side < self.min_safe_distance:
+
                 rospy.loginfo("Blocked in Front and on Both Sides -- Moving Back")
-                self.move_backward(0.1)
+                self.move_backward(0.15)
 
                 if front_side > left_front_side and front_side > right_front_side:
                     rospy.loginfo("Narrow Passage Detected -- Robot can't move")
                     self.move_cmd.linear.x = 0.0
                     self.move_cmd.angular.z = 0.0
-                    self.vel_pub.publish(self.move_cmd)                    
-
+                    self.vel_pub.publish(self.move_cmd)
+                    return False
+                                   
                 elif left_side < right_side:
-                    rospy.loginfo("Turning Right to Clear Path")
-                    self.turn(-0.25)
-                else:
-                    rospy.loginfo("Turning Left to Clear Path")
-                    self.turn(0.25)
-                   
+                    #rospy.loginfo("Turning Right to Clear Path")
+                    self.turn_90_degrees(-0.5)
+                    
+                elif left_side > right_side:
+                    #rospy.loginfo("Turning Left to Clear Path")
+                    self.turn_90_degrees(0.5)
 
+                else:
+                    print("Robot can't Move, Path is Blocked")
+                    self.move_cmd.linear.x = 0.0
+                    self.move_cmd.angular.z = 0.0
+                    self.vel_pub.publish(self.move_cmd)
+                    return False
 
 
         elif front_side > self.min_safe_distance and left_front_side < self.min_safe_distance and right_front_side < self.min_safe_distance:
@@ -206,14 +215,15 @@ class RobotMovement:
         # Adjust angular velocity
         angle_difference = angle_to_goal - self.current_orientation
         angle_difference = (angle_difference + 3.14) % (2 * 3.14) - 3.14  # Normalize angle
-        
+
 
         if abs(distance_to_goal) < 0.3:  # 30 cm tolerance
             rospy.loginfo("Goal reached!")
             self.move_cmd.linear.x = 0.0
             self.move_cmd.angular.z = 0.0
             self.vel_pub.publish(self.move_cmd)
-            return False  # Stop moving
+            return False
+            
 
         elif distance_to_goal >= 0.3:
             print("Goal Distance :", distance_to_goal)
@@ -222,14 +232,14 @@ class RobotMovement:
             if self.obstacle_detected:
                 self.avoid_obstacles(self.front_side, self.left_front_side, self.right_front_side, self.left_side, self.right_side)
 
-            elif abs(angle_difference) >= 3.0:
+            elif abs(angle_difference) >= 0.25:
                 self.move_cmd.linear.x = 0.0
                 self.move_cmd.angular.z = 0.5 * angle_difference
                 self.vel_pub.publish(self.move_cmd)
 
             else:
                 linear_speed = max(0.1, min(0.5, 0.2 * (self.front_side - self.min_safe_distance)))
-                print("Linear Speed : ", linear_speed)
+                #print("Linear Speed : ", linear_speed)
                 self.no_obst_forward(linear_speed)
            
 
@@ -238,11 +248,19 @@ class RobotMovement:
 
     def run(self):
         """Main loop to handle navigation and obstacle avoidance."""
-        rospy.loginfo("Starting robot motion...")
+
+        rospy.loginfo("Starting Robot Motion...")
         while not rospy.is_shutdown():
+            if self.navigate_to_goal() == False:
+                break
             self.navigate_to_goal()
             self.vel_pub.publish(self.move_cmd)
             self.rate.sleep()
+
+        self.move_cmd.linear.x = 0.0
+        self.move_cmd.angular.z = 0.0
+        self.vel_pub.publish(self.move_cmd)
+        rospy.loginfo("Robot Motion terminated.")
 
 if __name__ == '__main__':
     try:
