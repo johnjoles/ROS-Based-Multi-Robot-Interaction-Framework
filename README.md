@@ -47,5 +47,8 @@ Conducted virtual testing of robot behaviors to minimize errors during physical 
 Developed Motion Planning Algorithm for Precise Manipulation tasks performed by the Industrial Robot.
 Implemented Obstacle Avoidance for the Mobile Robot to Navigate complex environments using sensors such as LIDAR, Realsense Camera.
 
+![combined_nav](https://github.com/user-attachments/assets/a821c342-a0fd-40d6-8123-d53106318cab)
+
+
 #### Note:
 This framework demonstrates a comprehensive approach to Multi-Robot Interaction, showcasing proficiency in ROS, Robotics Simulation, and Autonomous Navigation. It holds significant potential for Industrial Automation, Logistics, and Collaborative Robotics.
