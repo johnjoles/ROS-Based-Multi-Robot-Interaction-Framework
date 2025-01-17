@@ -51,7 +51,8 @@ Path Planning
 ![combined_nav](https://github.com/user-attachments/assets/a821c342-a0fd-40d6-8123-d53106318cab)
 
 Motion Planning
-![Screenshot from 2025-01-17 17-07-26](https://github.com/user-attachments/assets/eed596f1-0d13-4b96-b662-8f2621255f84)
+![Screenshot from 2025-01-17 17-07-26](https://github.com/user-attachments/assets/1c40318b-deda-40ce-ab1e-121db766cc1b)
+
 
 
 
