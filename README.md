@@ -3,7 +3,13 @@
 
 This project focuses on creating a Robust and Efficient framework for interaction and coordination between a Mobile Robot and an Industrial Robot, leveraging the capabilities of the Robot Operating System (ROS). The framework enables synchronized task execution and improves operational efficiency in dynamic environments.
 
+#### Download Package:
+Download Universal Robot Package : https://github.com/ros-industrial/universal_robot/tree/noetic-devel/ur_description
+
+Download Turtlebot Gazebo Model : https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/main/turtlebot3_gazebo
+
 ### Behaviour Tree (Mobile Robot):
+
 
 ![Mobile_Robot_Flowchart](https://github.com/user-attachments/assets/a216eb42-4453-4e4f-beb1-cbee1c8640e8)
 
