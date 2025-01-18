@@ -54,6 +54,8 @@ Developed Motion Planning Algorithm for Precise Manipulation tasks performed by 
 Implemented Obstacle Avoidance for the Mobile Robot to Navigate complex environments using sensors such as LIDAR, Realsense Camera.
 
 ##### Path Planning
+![image](https://github.com/user-attachments/assets/943892b9-4f69-4819-b90f-c8077c704fc1)
+
 ![combined_nav](https://github.com/user-attachments/assets/a821c342-a0fd-40d6-8123-d53106318cab)
 
 ##### Motion Planning
