@@ -53,7 +53,7 @@ Conducted virtual testing of robot behaviors to minimize errors during physical 
 Developed Motion Planning Algorithm for Precise Manipulation tasks performed by the Industrial Robot.
 Implemented Obstacle Avoidance for the Mobile Robot to Navigate complex environments using sensors such as LIDAR, Realsense Camera.
 
-![combined (2)](https://github.com/user-attachments/assets/fa050ca6-2495-480b-8fd1-7efd4c3d8030)
+![combined (2)](https://github.com/user-attachments/assets/307a1380-350e-4c81-935d-8e093a39b353)
 
 
 ##### Path Planning
